@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "universes": [
+    {
+      "id": "dinotreta",
+      "name": "DinoTreta",
+      "description": "Arena jurássica com 16 dinossauros",
+      "url": "/universes/dinotreta/universe.json"
+    }
+  ]
+}
