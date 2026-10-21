@@ -459,3 +459,11 @@ footer {
     padding:16px 12px 80px
   }
 }
+
+/* Combat cards: always-visible attributes and named active conditions */
+.combat-stats { display: grid; gap: 7px; margin-top: 7px; }
+.combat-stats-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px; }
+.combat-stats-grid span { padding: 4px 5px; border-radius: 5px; background: rgba(20, 35, 25, .72); color: #e3eddb; font-size: 11px; white-space: nowrap; }
+.combat-status-list { display: flex; flex-wrap: wrap; gap: 4px; min-height: 19px; }
+.combat-status { background: rgba(202, 228, 144, .14); border: 1px solid rgba(202, 228, 144, .24); border-radius: 6px; padding: 3px 5px; font-size: 10px; line-height: 1.3; }
+.combat-no-status { color: #a5b6a3; font-size: 10px; }
