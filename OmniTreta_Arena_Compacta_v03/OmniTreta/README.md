@@ -36,3 +36,16 @@ Não confiar no cronômetro nem nos resultados de combate enviados pelo navegado
 A rota `/u/dinotreta` agora é lida pelo endereço atual via `useLocation`. Antes, `useParams` era usado fora de uma rota parametrizada, e por isso o ID do universo ficava indefinido.
 
 Durante `npm run dev`, o Service Worker não é registrado para evitar cache antigo de código durante desenvolvimento. Se você já abriu a versão anterior, em DevTools → Application → Service Workers, remova o registro antigo e recarregue.
+
+
+## v0.3 — Arena compacta e feedback de combate
+
+- Arena ajusta a altura dos lutadores ao viewport e ao tamanho da equipe (1–6).
+- Ataques têm duas fases visuais (anúncio e impacto), com o estado do combate aplicado depois da apresentação.
+- IA usa habilidades disponíveis, inclusive especiais.
+- Vitória exibida em sobreposição de tela cheia da arena.
+- Nomes de equipes editáveis antes da partida.
+- Tempo livre (sem limite) e temporizador por tamanho de equipe salvo em `localStorage` sob `omnitreta:timers:v1`.
+- No modo PvE, a IA continua atuando mesmo com tempo livre.
+
+Para validar: `npm install`, `npm run dev`, `npm test` e `npm run build`.
