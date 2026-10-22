@@ -467,3 +467,44 @@ footer {
 .combat-status-list { display: flex; flex-wrap: wrap; gap: 4px; min-height: 19px; }
 .combat-status { background: rgba(202, 228, 144, .14); border: 1px solid rgba(202, 228, 144, .24); border-radius: 6px; padding: 3px 5px; font-size: 10px; line-height: 1.3; }
 .combat-no-status { color: #a5b6a3; font-size: 10px; }
+
+/* Arena v0.2: mirrored fighters, outward attributes, inward attacks */
+.arena-stage { padding: 16px 14px 12px; margin-top: 18px; border: 1px solid #456347; border-radius: 22px; background: radial-gradient(ellipse at 50% 65%, #324e34 0%, #172a21 62%, #0e1c17 100%); overflow: hidden; }
+.arena-topline { display: grid; grid-template-columns: 1fr 55px 1fr; gap: 12px; align-items: center; color: #d4e8ba; font-weight: 800; font-size: 13px; letter-spacing: 1px; margin-bottom: 12px; }
+.arena-topline > :last-child { text-align: right; }
+.arena-vs { text-align: center; font-size: 24px; font-weight: 900; color: #f0bd7b; }
+.arena-formations { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: clamp(12px, 3vw, 60px); }
+.arena-team { display: grid; align-content: start; gap: 13px; min-width: 0; }
+.arena-fighter { display: grid; grid-template-columns: minmax(48px, 72px) minmax(0,1fr) 45px; gap: 8px; align-items: center; min-width: 0; position: relative; transition: opacity .2s; }
+.arena-fighter.is-acting .arena-figure { outline: 2px solid #c7e986; box-shadow: 0 0 24px #c7e9863b; }
+.arena-fighter.is-defeated { opacity: .38; filter: grayscale(1); }
+.arena-attributes { display: grid; gap: 4px; }
+.arena-attributes > span { font-size: 12px; font-weight: 700; padding: 5px 3px; border-radius: 5px; background: #101e19d9; color: #e5ecdc; white-space: nowrap; text-align: center; }
+.arena-attributes small { color: #f1b57c; font-size: 10px; }
+.arena-figure { display: flex; flex-direction: column; align-items: center; padding: 4px; min-width: 0; width: 100%; color: #f2f7e8; background: transparent; border: 1px solid transparent; border-radius: 12px; cursor: default; }
+.arena-figure:disabled { opacity: 1; cursor: default; }
+.is-targetable .arena-figure { cursor: crosshair; border: 2px solid #f0b45b; background: #e3b76b18; animation: target-pulse 1.2s ease-in-out infinite alternate; }
+.is-targetable .arena-figure:hover { background: #e3b76b30; transform: scale(1.025); }
+@keyframes target-pulse { to { box-shadow: 0 0 17px #f0b45b88; } }
+.arena-portrait { width: 100%; height: clamp(100px, 14vw, 190px); display: flex; align-items: center; justify-content: center; }
+.arena-portrait img { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 10px 9px #0009); }
+.arena-portrait span { font-size: clamp(55px, 8vw, 105px); display: inline-block; }
+.arena-flipped { transform: scaleX(-1); }
+.arena-name { display: block; font-size: 13px; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: center; }
+.arena-health { font-size: 11px; font-weight: 700; width: 100%; margin-top: 4px; }
+.arena-health-track { background: #0a1710; height: 7px; border-radius: 20px; margin-top: 4px; overflow: hidden; }
+.arena-health-track i { display: block; height: 100%; background: #a6d57c; transition: width .35s ease; }
+.arena-effects { display: flex; flex-wrap: wrap; gap: 3px; min-height: 18px; justify-content: center; margin-top: 5px; }
+.arena-effects span { font-size: 13px; padding: 1px 3px; background: #17241be8; border-radius: 4px; }
+.arena-skills { display: flex; flex-direction: column; gap: 6px; align-self: center; }
+.arena-skill { position: relative; width: 43px; height: 43px; padding: 0; display: grid; place-items: center; font-size: 22px; border: 1px solid #567355; border-radius: 8px; background: #203629; }
+.arena-skill:disabled { opacity: .42; cursor: default; }
+.arena-skill:not(:disabled):hover, .arena-skill.is-selected { background: #48643b; border-color: #d0eb8b; transform: translateY(-1px); }
+.skill-cd { position: absolute; bottom: 0; right: 2px; color: #fff; background: #702f28; border-radius: 4px; padding: 0 3px; font-size: 10px; }
+.arena-prompt { margin: 16px auto 2px; padding: 10px 14px; border-radius: 10px; text-align: center; background: #101e18c9; color: #e4efcf; display: flex; align-items: center; justify-content: center; gap: 12px; }
+.arena-prompt button { font-size: 12px; padding: 5px 9px; }
+.arena-mobile-help { color: #adc5a9; font-size: 11px; text-align: center; margin-top: 6px; }
+.arena-bottom { display: grid; grid-template-columns: 1fr; margin-top: 16px; }
+.arena-bottom .logs { max-height: 160px; }
+@media (max-width: 820px) { .arena-stage { padding: 10px 6px; } .arena-formations { gap: 5px; } .arena-fighter { grid-template-columns: 37px minmax(0,1fr) 29px; gap: 3px; } .arena-attributes > span { font-size: 9px; padding: 3px 1px; } .arena-skill { width: 29px; height: 32px; font-size: 15px; } .arena-portrait { height: clamp(76px, 17vw, 145px); } .arena-name { font-size: 10px; } .arena-health { font-size: 9px; } .arena-team { gap: 7px; } .arena-topline { font-size: 10px; } }
+@media (max-width: 440px) { .arena-fighter { grid-template-columns: 31px minmax(0,1fr) 27px; } .arena-attributes > span { font-size: 8px; } .arena-skill { width: 27px; height: 29px; font-size: 13px; } .arena-portrait { height: 72px; } .arena-name { font-size: 9px; } .arena-health { font-size: 8px; } }
