@@ -1,0 +1,1122 @@
+{
+  "schemaVersion": 1,
+  "id": "dinotreta",
+  "version": "1.0.0",
+  "name": "DinoTreta",
+  "subtitle": "Arena Jurássica",
+  "description": "Dinossauros, estratégia e muita treta.",
+  "theme": {
+    "background": "#0d1813",
+    "surface": "#1c3024",
+    "accent": "#d2e98a",
+    "secondary": "#e9b16c"
+  },
+  "characters": [
+    {
+      "id": "spi",
+      "name": "Espinossauro",
+      "type": "PREDADOR AQUÁTICO",
+      "description": "Predador versátil. Sangramento e pressão contínua.",
+      "image": "images/spi.webp",
+      "emoji": "🦖",
+      "stats": {
+        "hp": 116,
+        "attack": 19,
+        "initiative": 12,
+        "armor": 7,
+        "dodge": 0.09,
+        "critical": 0.15
+      },
+      "abilities": [
+        {
+          "id": "spi_0",
+          "name": "Mordida serrilhada",
+          "description": "Dano confiável.",
+          "cooldown": 0,
+          "effects": [
+            {
+              "id": "damage",
+              "target": "enemy",
+              "power": 1
+            }
+          ]
+        },
+        {
+          "id": "spi_1",
+          "name": "Garras de rio",
+          "description": "Dano leve e sangramento por 2 turnos.",
+          "cooldown": 1,
+          "effects": [
+            {
+              "id": "damage",
+              "target": "enemy",
+              "power": 0.72
+            },
+            {
+              "id": "bleed",
+              "target": "enemy",
+              "duration": 2,
+              "power": 5
+            }
+          ]
+        },
+        {
+          "id": "spi_2",
+          "name": "Investida da vela",
+          "description": "Golpe pesado que reduz a defesa inimiga.",
+          "cooldown": 3,
+          "effects": [
+            {
+              "id": "damage",
+              "target": "enemy",
+              "power": 1.75
+            },
+            {
+              "id": "burn",
+              "target": "enemy",
+              "duration": 2,
+              "power": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rex",
+      "name": "Tiranossauro",
+      "type": "PREDADOR ALFA",
+      "description": "Dano explosivo, porém menos veloz.",
+      "image": "images/rex.webp",
+      "emoji": "🦖",
+      "stats": {
+        "hp": 115,
+        "attack": 23,
+        "initiative": 7,
+        "armor": 6,
+        "dodge": 0.035,
+        "critical": 0.17
+      },
+      "abilities": [
+        {
+          "id": "rex_0",
+          "name": "Mordida brutal",
+          "description": "Dano consistente.",
+          "cooldown": 0,
+          "effects": [
+            {
+              "id": "damage",
+              "target": "enemy",
+              "power": 1
+            }
+          ]
+        },
+        {
+          "id": "rex_1",
+          "name": "Rugido ancestral",
+          "description": "Dano moderado e reduz ataque inimigo.",
+          "cooldown": 1,
+          "effects": [
+            {
+              "id": "damage",
+              "target": "enemy",
+              "power": 0.7
+            },
+            {
+              "id": "weaken",
+              "target": "enemy",
+              "duration": 2,
+              "power": 1
+            }
+          ]
+        },
+        {
+          "id": "rex_2",
+          "name": "Mandíbulas supremas",
+          "description": "Golpe devastador de alto impacto.",
+          "cooldown": 3,
+          "effects": [
+            {
+              "id": "damage",
+              "target": "enemy",
+              "power": 1.8
+            },
+            {
+              "id": "delay",
+              "target": "enemy",
+              "duration": 1,
+              "power": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rap",
+      "name": "Velocirraptor",
+      "type": "CAÇADOR ÁGIL",
+      "description": "Veloz e preciso. Esquiva e ataques críticos.",
+      "image": "images/rap.webp",
+      "emoji": "🦖",
+      "stats": {
+        "hp": 93,
+        "attack": 17,
+        "initiative": 20,
+        "armor": 5,
+        "dodge": 0.32,
+        "critical": 0.27
+      },
+      "abilities": [
+        {
+          "id": "rap_0",
+          "name": "Garra veloz",
+          "description": "Ataque rápido.",
+          "cooldown": 0,
+          "effects": [
+            {
+              "id": "damage",
+              "target": "enemy",
+              "power": 1
+            }
+          ]
+        },
+        {
+          "id": "rap_1",
+          "name": "Passo furtivo",
+          "description": "Ataca e ganha chance de esquiva.",
+          "cooldown": 1,
+          "effects": [
+            {
+              "id": "damage",
+              "target": "enemy",
+              "power": 0.85
+            },
+            {
+              "id": "evasion",
+              "target": "self",
+              "duration": 2,
+              "power": 1
+            }
+          ]
+        },
+        {
+          "id": "rap_2",
+          "name": "Ataque em salto",
+          "description": "Golpe preciso com crítico ampliado.",
+          "cooldown": 3,
+          "effects": [
+            {
+              "id": "damage",
+              "target": "enemy",
+              "power": 1.8
+            },
+            {
+              "id": "critical_boost",
+              "target": "self",
+              "duration": 2,
+              "power": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bra",
+      "name": "Braquiossauro",
+      "type": "COLOSSO HERBÍVORO",
+      "description": "Muita vida e resistência, mas pouco ágil.",
+      "image": "images/bra.webp",
+      "emoji": "🦕",
+      "stats": {
+        "hp": 145,
+        "attack": 17,
+        "initiative": 5,
+        "armor": 9,
+        "dodge": 0.01,
+        "critical": 0.09
+      },
+      "abilities": [
+        {
+          "id": "bra_0",
+          "name": "Pisoteio",
+          "description": "Golpe de peso.",
+          "cooldown": 0,
+          "effects": [
+            {
+              "id": "damage",
+              "target": "enemy",
+              "power": 1
+            }
+          ]
+        },
+        {
+          "id": "bra_1",
+          "name": "Postura gigante",
+          "description": "Dano leve e recupera vida.",
+          "cooldown": 1,
+          "effects": [
+            {
+              "id": "damage",
+              "target": "enemy",
+              "power": 0.65
+            },
+            {
+              "id": "heal",
+              "target": "self",
+              "duration": 2,
+              "power": 12
+            }
+          ]
+        },
+        {
+          "id": "bra_2",
+          "name": "Terremoto",
+          "description": "Grande impacto que enfraquece o rival.",
+          "cooldown": 3,
+          "effects": [
+            {
+              "id": "damage",
+              "target": "enemy",
+              "power": 1.8
+            },
+            {
+              "id": "delay",
+              "target": "enemy",
+              "duration": 1,
+              "power": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ste",
+      "name": "Estegossauro",
+      "type": "DEFENSOR ESPINHOSO",
+      "description": "Contra-ataques e espinhos que causam sangramento.",
+      "image": "images/ste.webp",
+      "emoji": "🦕",
+      "stats": {
+        "hp": 126,
+        "attack": 17,
+        "initiative": 9,
+        "armor": 10,
+        "dodge": 0.055,
+        "critical": 0.12
+      },
+      "abilities": [
+        {
+          "id": "ste_0",
+          "name": "Golpe de cauda",
+          "description": "Ataque padrão.",
+          "cooldown": 0,
+          "effects": [
+            {
+              "id": "damage",
+              "target": "enemy",
+              "power": 1
+            }
+          ]
+        },
+        {
+          "id": "ste_1",
+          "name": "Guarda espinhosa",
+          "description": "Ataca e prepara um contra-ataque.",
+          "cooldown": 1,
+          "effects": [
+            {
+              "id": "damage",
+              "target": "enemy",
+              "power": 0.65
+            },
+            {
+              "id": "thorns",
+              "target": "self",
+              "duration": 2,
+              "power": 1
+            }
+          ]
+        },
+        {
+          "id": "ste_2",
+          "name": "Cauda de aço",
+          "description": "Golpe forte e sangramento.",
+          "cooldown": 3,
+          "effects": [
+            {
+              "id": "damage",
+              "target": "enemy",
+              "power": 1.65
+            },
+            {
+              "id": "bleed",
+              "target": "enemy",
+              "duration": 2,
+              "power": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ank",
+      "name": "Anquilossauro",
+      "type": "FORTALEZA VIVA",
+      "description": "Armadura imponente e golpes que quebram defesas.",
+      "image": "images/ank.webp",
+      "emoji": "🦕",
+      "stats": {
+        "hp": 130,
+        "attack": 17,
+        "initiative": 6,
+        "armor": 12,
+        "dodge": 0.025,
+        "critical": 0.1
+      },
+      "abilities": [
+        {
+          "id": "ank_0",
+          "name": "Clava óssea",
+          "description": "Ataque padrão.",
+          "cooldown": 0,
+          "effects": [
+            {
+              "id": "damage",
+              "target": "enemy",
+              "power": 1
+            }
+          ]
+        },
+        {
+          "id": "ank_1",
+          "name": "Casco fechado",
+          "description": "Dano leve e armadura temporária.",
+          "cooldown": 1,
+          "effects": [
+            {
+              "id": "damage",
+              "target": "enemy",
+              "power": 0.65
+            },
+            {
+              "id": "armor_up",
+              "target": "self",
+              "duration": 2,
+              "power": 1
+            }
+          ]
+        },
+        {
+          "id": "ank_2",
+          "name": "Esmaga-rochas",
+          "description": "Golpe que ignora parte da armadura.",
+          "cooldown": 3,
+          "effects": [
+            {
+              "id": "damage",
+              "target": "enemy",
+              "power": 1.7
+            },
+            {
+              "id": "pierce",
+              "target": "enemy",
+              "duration": 2,
+              "power": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "comp",
+      "name": "Compsognato",
+      "type": "MICRO CAÇADOR",
+      "description": "Minúsculo e quase impossível de acertar; golpes leves.",
+      "image": null,
+      "emoji": "🦖",
+      "stats": {
+        "hp": 58,
+        "attack": 12,
+        "initiative": 27,
+        "armor": 2,
+        "dodge": 0.52,
+        "critical": 0.19
+      },
+      "abilities": [
+        {
+          "id": "comp_0",
+          "name": "Bicada rápida",
+          "description": "Ataque leve e certeiro.",
+          "cooldown": 0,
+          "effects": [
+            {
+              "id": "damage",
+              "target": "enemy",
+              "power": 1
+            }
+          ]
+        },
+        {
+          "id": "comp_1",
+          "name": "Zigue-zague",
+          "description": "Ataca e prepara evasão.",
+          "cooldown": 1,
+          "effects": [
+            {
+              "id": "damage",
+              "target": "enemy",
+              "power": 0.7
+            },
+            {
+              "id": "evasion",
+              "target": "self",
+              "duration": 2,
+              "power": 1
+            }
+          ]
+        },
+        {
+          "id": "comp_2",
+          "name": "Enxame ilusório",
+          "description": "Ataque múltiplo de grande precisão.",
+          "cooldown": 3,
+          "effects": [
+            {
+              "id": "damage",
+              "target": "enemy",
+              "power": 1.85
+            },
+            {
+              "id": "critical_boost",
+              "target": "self",
+              "duration": 2,
+              "power": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dil",
+      "name": "Dilofossauro",
+      "type": "CAÇADOR ASTUTO",
+      "description": "Velocidade e golpes que enfraquecem o inimigo.",
+      "image": null,
+      "emoji": "🦖",
+      "stats": {
+        "hp": 86,
+        "attack": 17,
+        "initiative": 19,
+        "armor": 4,
+        "dodge": 0.26,
+        "critical": 0.2
+      },
+      "abilities": [
+        {
+          "id": "dil_0",
+          "name": "Mordida rápida",
+          "description": "Ataque comum.",
+          "cooldown": 0,
+          "effects": [
+            {
+              "id": "damage",
+              "target": "enemy",
+              "power": 1
+            }
+          ]
+        },
+        {
+          "id": "dil_1",
+          "name": "Finta venenosa",
+          "description": "Enfraquece o ataque adversário.",
+          "cooldown": 1,
+          "effects": [
+            {
+              "id": "damage",
+              "target": "enemy",
+              "power": 0.8
+            },
+            {
+              "id": "poison",
+              "target": "enemy",
+              "duration": 2,
+              "power": 4
+            }
+          ]
+        },
+        {
+          "id": "dil_2",
+          "name": "Duplo bote",
+          "description": "Ataque feroz e preciso.",
+          "cooldown": 3,
+          "effects": [
+            {
+              "id": "damage",
+              "target": "enemy",
+              "power": 1.75
+            },
+            {
+              "id": "poison",
+              "target": "enemy",
+              "duration": 2,
+              "power": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "par",
+      "name": "Parassaurolofo",
+      "type": "HERBÍVORO SONORO",
+      "description": "Controla o ritmo do combate com seu chamado.",
+      "image": null,
+      "emoji": "🦕",
+      "stats": {
+        "hp": 105,
+        "attack": 16,
+        "initiative": 14,
+        "armor": 7,
+        "dodge": 0.13,
+        "critical": 0.13
+      },
+      "abilities": [
+        {
+          "id": "par_0",
+          "name": "Chute traseiro",
+          "description": "Golpe comum.",
+          "cooldown": 0,
+          "effects": [
+            {
+              "id": "damage",
+              "target": "enemy",
+              "power": 1
+            }
+          ]
+        },
+        {
+          "id": "par_1",
+          "name": "Chamado estrondoso",
+          "description": "Reduz o ataque adversário.",
+          "cooldown": 1,
+          "effects": [
+            {
+              "id": "damage",
+              "target": "enemy",
+              "power": 0.75
+            },
+            {
+              "id": "delay",
+              "target": "enemy",
+              "duration": 1,
+              "power": 9
+            }
+          ]
+        },
+        {
+          "id": "par_2",
+          "name": "Onda de Desorientação",
+          "description": "Atinge toda a equipe adversária e atrasa os próximos turnos.",
+          "cooldown": 3,
+          "effects": [
+            {
+              "id": "damage",
+              "target": "all_enemies",
+              "power": 0.5,
+              "distribution": "split"
+            },
+            {
+              "id": "delay",
+              "target": "pending_enemies",
+              "power": 10,
+              "duration": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "igu",
+      "name": "Iguanodonte",
+      "type": "DEFENSOR VERSÁTIL",
+      "description": "Resistente, usa os polegares como armas.",
+      "image": null,
+      "emoji": "🦕",
+      "stats": {
+        "hp": 119,
+        "attack": 17,
+        "initiative": 12,
+        "armor": 9,
+        "dodge": 0.09,
+        "critical": 0.13
+      },
+      "abilities": [
+        {
+          "id": "igu_0",
+          "name": "Golpe de polegar",
+          "description": "Ataque padrão.",
+          "cooldown": 0,
+          "effects": [
+            {
+              "id": "damage",
+              "target": "enemy",
+              "power": 1
+            }
+          ]
+        },
+        {
+          "id": "igu_1",
+          "name": "Postura firme",
+          "description": "Fortalece a armadura.",
+          "cooldown": 1,
+          "effects": [
+            {
+              "id": "damage",
+              "target": "enemy",
+              "power": 0.7
+            },
+            {
+              "id": "armor_up",
+              "target": "self",
+              "duration": 2,
+              "power": 1
+            }
+          ]
+        },
+        {
+          "id": "igu_2",
+          "name": "Estocada óssea",
+          "description": "Ignora parte da defesa.",
+          "cooldown": 3,
+          "effects": [
+            {
+              "id": "damage",
+              "target": "enemy",
+              "power": 1.75
+            },
+            {
+              "id": "pierce",
+              "target": "enemy",
+              "duration": 2,
+              "power": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "all",
+      "name": "Alossauro",
+      "type": "PREDADOR IMPLACÁVEL",
+      "description": "Caçador equilibrado, focado em sangramento.",
+      "image": null,
+      "emoji": "🦖",
+      "stats": {
+        "hp": 108,
+        "attack": 19,
+        "initiative": 15,
+        "armor": 6,
+        "dodge": 0.13,
+        "critical": 0.19
+      },
+      "abilities": [
+        {
+          "id": "all_0",
+          "name": "Mordida cortante",
+          "description": "Ataque padrão.",
+          "cooldown": 0,
+          "effects": [
+            {
+              "id": "damage",
+              "target": "enemy",
+              "power": 1
+            }
+          ]
+        },
+        {
+          "id": "all_1",
+          "name": "Garras afiadas",
+          "description": "Provoca sangramento.",
+          "cooldown": 1,
+          "effects": [
+            {
+              "id": "damage",
+              "target": "enemy",
+              "power": 0.8
+            },
+            {
+              "id": "bleed",
+              "target": "enemy",
+              "duration": 2,
+              "power": 5
+            }
+          ]
+        },
+        {
+          "id": "all_2",
+          "name": "Emboscada jurássica",
+          "description": "Ataque forte com chance crítica.",
+          "cooldown": 3,
+          "effects": [
+            {
+              "id": "damage",
+              "target": "enemy",
+              "power": 1.75
+            },
+            {
+              "id": "critical_boost",
+              "target": "self",
+              "duration": 2,
+              "power": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "car",
+      "name": "Carnotauro",
+      "type": "PREDADOR VELOZ",
+      "description": "Explosão de velocidade e investidas.",
+      "image": null,
+      "emoji": "🦖",
+      "stats": {
+        "hp": 96,
+        "attack": 20,
+        "initiative": 20,
+        "armor": 4,
+        "dodge": 0.23,
+        "critical": 0.18
+      },
+      "abilities": [
+        {
+          "id": "car_0",
+          "name": "Mordida veloz",
+          "description": "Ataque padrão.",
+          "cooldown": 0,
+          "effects": [
+            {
+              "id": "damage",
+              "target": "enemy",
+              "power": 1
+            }
+          ]
+        },
+        {
+          "id": "car_1",
+          "name": "Arrancada lateral",
+          "description": "Ataca e aumenta evasão.",
+          "cooldown": 1,
+          "effects": [
+            {
+              "id": "damage",
+              "target": "enemy",
+              "power": 0.8
+            },
+            {
+              "id": "evasion",
+              "target": "self",
+              "duration": 2,
+              "power": 1
+            }
+          ]
+        },
+        {
+          "id": "car_2",
+          "name": "Carga dos chifres",
+          "description": "Ataque de alto impacto.",
+          "cooldown": 3,
+          "effects": [
+            {
+              "id": "damage",
+              "target": "enemy",
+              "power": 1.8
+            },
+            {
+              "id": "burn",
+              "target": "enemy",
+              "duration": 2,
+              "power": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gal",
+      "name": "Galimimo",
+      "type": "CORREDOR INCANSÁVEL",
+      "description": "Velocidade extrema e ataques oportunistas.",
+      "image": null,
+      "emoji": "🦖",
+      "stats": {
+        "hp": 76,
+        "attack": 14,
+        "initiative": 25,
+        "armor": 3,
+        "dodge": 0.39,
+        "critical": 0.19
+      },
+      "abilities": [
+        {
+          "id": "gal_0",
+          "name": "Chute ligeiro",
+          "description": "Ataque padrão.",
+          "cooldown": 0,
+          "effects": [
+            {
+              "id": "damage",
+              "target": "enemy",
+              "power": 1
+            }
+          ]
+        },
+        {
+          "id": "gal_1",
+          "name": "Disparada",
+          "description": "Ataca e prepara esquiva.",
+          "cooldown": 1,
+          "effects": [
+            {
+              "id": "damage",
+              "target": "enemy",
+              "power": 0.7
+            },
+            {
+              "id": "evasion",
+              "target": "self",
+              "duration": 2,
+              "power": 1
+            }
+          ]
+        },
+        {
+          "id": "gal_2",
+          "name": "Sequência relâmpago",
+          "description": "Ataque veloz de alto dano.",
+          "cooldown": 3,
+          "effects": [
+            {
+              "id": "damage",
+              "target": "enemy",
+              "power": 1.85
+            },
+            {
+              "id": "delay",
+              "target": "enemy",
+              "duration": 1,
+              "power": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pac",
+      "name": "Paquicefalossauro",
+      "type": "ARÍETE VIVO",
+      "description": "Seu crânio poderoso rompe armaduras.",
+      "image": null,
+      "emoji": "🦕",
+      "stats": {
+        "hp": 110,
+        "attack": 18,
+        "initiative": 13,
+        "armor": 8,
+        "dodge": 0.12,
+        "critical": 0.14
+      },
+      "abilities": [
+        {
+          "id": "pac_0",
+          "name": "Cabeçada",
+          "description": "Ataque padrão.",
+          "cooldown": 0,
+          "effects": [
+            {
+              "id": "damage",
+              "target": "enemy",
+              "power": 1
+            }
+          ]
+        },
+        {
+          "id": "pac_1",
+          "name": "Firmeza craniana",
+          "description": "Reforça a armadura.",
+          "cooldown": 1,
+          "effects": [
+            {
+              "id": "damage",
+              "target": "enemy",
+              "power": 0.7
+            },
+            {
+              "id": "armor_up",
+              "target": "self",
+              "duration": 2,
+              "power": 1
+            }
+          ]
+        },
+        {
+          "id": "pac_2",
+          "name": "Aríete colossal",
+          "description": "Ignora parte da armadura.",
+          "cooldown": 3,
+          "effects": [
+            {
+              "id": "damage",
+              "target": "enemy",
+              "power": 1.8
+            },
+            {
+              "id": "pierce",
+              "target": "enemy",
+              "duration": 2,
+              "power": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "apa",
+      "name": "Apatossauro",
+      "type": "GIGANTE DE CAUDA",
+      "description": "Muita resistência e golpes de grande alcance.",
+      "image": null,
+      "emoji": "🦕",
+      "stats": {
+        "hp": 148,
+        "attack": 16,
+        "initiative": 4,
+        "armor": 9,
+        "dodge": 0.015,
+        "critical": 0.08
+      },
+      "abilities": [
+        {
+          "id": "apa_0",
+          "name": "Golpe de cauda",
+          "description": "Ataque padrão.",
+          "cooldown": 0,
+          "effects": [
+            {
+              "id": "damage",
+              "target": "enemy",
+              "power": 1
+            }
+          ]
+        },
+        {
+          "id": "apa_1",
+          "name": "Respiro colossal",
+          "description": "Recupera parte da vida.",
+          "cooldown": 1,
+          "effects": [
+            {
+              "id": "damage",
+              "target": "enemy",
+              "power": 0.65
+            },
+            {
+              "id": "heal",
+              "target": "self",
+              "duration": 2,
+              "power": 12
+            }
+          ]
+        },
+        {
+          "id": "apa_2",
+          "name": "Pisoteio sísmico",
+          "description": "Impacto massivo.",
+          "cooldown": 3,
+          "effects": [
+            {
+              "id": "damage",
+              "target": "enemy",
+              "power": 1.8
+            },
+            {
+              "id": "delay",
+              "target": "enemy",
+              "duration": 1,
+              "power": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "arg",
+      "name": "Argentinossauro",
+      "type": "TITÃ PRÉ-HISTÓRICO",
+      "description": "Enorme, lento e extremamente resistente.",
+      "image": null,
+      "emoji": "🦕",
+      "stats": {
+        "hp": 158,
+        "attack": 15,
+        "initiative": 3,
+        "armor": 10,
+        "dodge": 0.005,
+        "critical": 0.07
+      },
+      "abilities": [
+        {
+          "id": "arg_0",
+          "name": "Cauda titânica",
+          "description": "Ataque padrão.",
+          "cooldown": 0,
+          "effects": [
+            {
+              "id": "damage",
+              "target": "enemy",
+              "power": 1
+            }
+          ]
+        },
+        {
+          "id": "arg_1",
+          "name": "Muralha viva",
+          "description": "Fortalece a armadura.",
+          "cooldown": 1,
+          "effects": [
+            {
+              "id": "damage",
+              "target": "enemy",
+              "power": 0.65
+            },
+            {
+              "id": "armor_up",
+              "target": "self",
+              "duration": 2,
+              "power": 1
+            }
+          ]
+        },
+        {
+          "id": "arg_2",
+          "name": "Tremor Continental",
+          "description": "Dano distribuído entre todos os inimigos e lentidão prolongada.",
+          "cooldown": 3,
+          "effects": [
+            {
+              "id": "damage",
+              "target": "all_enemies",
+              "power": 1.3,
+              "distribution": "split"
+            },
+            {
+              "id": "slow",
+              "target": "all_enemies",
+              "power": 6,
+              "duration": 3
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
